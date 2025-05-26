@@ -45,8 +45,7 @@ function playRound(humanChoice,computerChoice){
                 result = "Tie";
             }
         }
-        alert(`your choice is ${hChoice} and computer choice is ${cChoice}.Result ${result}.`);
-        return result;
+        return [hChoice,cChoice,result];
 }
 
 function playGame(){
@@ -58,12 +57,12 @@ let computerScore = 0;
 for(i=0;i<5;i++){
     let result = playRound(getHumanChoice(),getComputerChoice());
 
-        if(result === "Win"){
+        if(result[2] === "Win"){
             humanScore+=1;
-        }else if(result === "Lose"){
+        }else if(result[2] === "Lose"){
             computerScore+=1;
         }
-        alert(`computer:${computerScore} Human:${humanScore}`);
+        alert(`Humam choice is ${result[0]} and computer choice is ${result[1]}.computer:${computerScore} Human:${humanScore}`);
 }
 }
 
